@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Router, Route, Switch } from 'react-router'
 import Client from 'shopify-buy';
 import { Row, Col } from 'antd';
 import { Product, ProductList, Nav } from './LaTienda';
@@ -22,19 +23,19 @@ class App extends Component {
   }
 
   getProduct(productId) {
-    client.product.fetch(productId).then((product) => {
+    client.product.fetch(productId).then(product => {
       console.log(product);
     });
   }
 
   getAllCollections() {
-    client.collection.fetchAllWithProducts().then((collections) => {
+    client.collection.fetchAllWithProducts().then(collections => {
       this.setState({ collections: collections });
     });
   }
 
   getCollection(collectionId) {
-    client.collection.fetchWithProducts(collectionId).then((collection) => {
+    client.collection.fetchWithProducts(collectionId).then(collection  => {
       console.log(collection);
     });
   }
@@ -68,7 +69,7 @@ class App extends Component {
   }
 
   removeItemFromCheckout(lineItemIdsToRemove) {
-    client.checkout.removeLineItems(this.getCheckoutID(), lineItemIdsToRemove).then((checkout) => {
+    client.checkout.removeLineItems(this.getCheckoutID(), lineItemIdsToRemove).then(checkout => {
       this.getCheckout();
     });
   }
