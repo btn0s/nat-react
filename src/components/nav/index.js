@@ -57,28 +57,6 @@ export default class Nav extends Component {
             </Row>
           </Col>
         </Row>
-        {/* <Row type={'flex'} align={'center'} justify={'center'} style={{paddingTop: '25px'}}>
-          <Col span={2}>
-            <Link to={'/'}>
-              Home
-            </Link>
-          </Col>
-          <Col span={2}>
-            <Link to={'/shop'}>
-              Shop
-            </Link>
-          </Col>
-          <Col span={2}>
-            <Link to={'/create'}>
-              Create
-            </Link>
-          </Col>
-          <Col span={2}>
-            <Link to={'/live'}>
-              Live
-            </Link>
-          </Col>
-        </Row> */}
       </div>
     )
   }

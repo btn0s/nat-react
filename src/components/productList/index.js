@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'antd';
-import { Product } from './nat-components'
+import { Product } from './index'
 
 export default class ProductList extends Component {
 
