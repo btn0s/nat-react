@@ -1,0 +1,6 @@
+export { default as App } from './app'
+export { default as Home } from './home'
+export { default as Live } from './live'
+export { default as About } from './about'
+export { default as Shop } from './shop'
+export { default as Create } from './create'
