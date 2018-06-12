@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'antd';
-import { Product } from '../LaTienda'
+import { Product } from './index'
 
 export default class ProductList extends Component {
-  
+
   products() {
     if (!this.props.products) {
 
