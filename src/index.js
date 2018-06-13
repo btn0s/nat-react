@@ -4,18 +4,20 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import store, { history } from './store'
 import App from './containers/app'
+import { getAllProducts } from './actions/app/index'
 
 import './index.css'
 
 const target = document.querySelector('#root');
 
 window.store = store;
+window.getAllProducts = getAllProducts;
 
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-        <App />
+        <App store={store}/>
       </div>
     </ConnectedRouter>
   </Provider>,

@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'antd';
-import { Product } from './index'
+import Product from '../product'
 
-export default class ProductList extends Component {
+class ProductList extends Component {
 
-  products() {
+  componentWillMount() {
+    
+  }
+
+  renderProducts() {
     if (!this.props.products) {
-
-    } else {
-      const products = this.props.products.map((prod) =>
-        <Col span={6} key={prod.id.toString()}>
-          <Product product={prod} />
+      return (
+        <Col span={24}>
+          No Products
         </Col>
-      );
-      return products;
+      )
+    } else {
+      return this.props.products.map( prod => {
+        return (
+          <Col span={6} key={prod.id.toString()}>
+            <Product product={prod} />
+          </Col>
+        )
+      })
     }
   }
 
   render() {
     return (
       <Row type="flex">
-        {this.products()}
+        { this.renderProducts() }
       </Row>
-    );
+    )
   }
-
 }
+
+export default ProductList;

@@ -4,21 +4,11 @@ import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
 import combineReducers from "./reducers/index"
 import { composeWithDevTools } from 'redux-devtools-extension'
+import initialState from './constants/initial-state'
 
 export const history = createHistory()
 
-const initialState = {
-  products: {
-    current: {},
-    all: {},
-  },
-  collections: {
-    current: {},
-    all: {},
-  },
-  checkout: {},
-  routing: {}
-}
+
 const enhancers = []
 const middleware = [
   thunk,
