@@ -7,23 +7,6 @@ import Nav from '../../components/nav'
 import 'antd/dist/antd.css';
 import './App.css';
 
-
-
-// constructor(props) {
-//   super(props);
-//   this.state = {};
-// }
-
-// componentWillMount() {
-//   this.getAllProducts();
-//   this.getAllCollections();
-//   this.createCheckout();
-// }
-
-// componentDidMount() {
-//   console.log('done');
-// }
-
 const App = () => (
   <div className="App">
 

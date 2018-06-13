@@ -4,9 +4,9 @@ import { routerReducer } from 'react-router-redux'
 const productReducer = (state = {}, action) => {
   switch (action.type) {
     case 'GET_ALL_PRODUCTS':
-      return {};
+      return {...state, products: [...state.products.all, action.payload]};
     case 'GET_PRODUCT':
-      return action.id
+      return {...state, products: [...state.products.current, action.payload]};
     default:
       return state;
   }
@@ -15,9 +15,9 @@ const productReducer = (state = {}, action) => {
 const collectionReducer = (state = {}, action) => {
   switch (action.type) {
     case 'GET_ALL_COLLECTIONS':
-      return {};
+      return {...state, collections: [...state.collections.all, action.payload]};
     case 'GET_COLLECTION':
-      return action.id;
+      return {...state, collections: [...state.collections.current, action.payload]};
     default:
       return state;
   }
@@ -26,17 +26,9 @@ const collectionReducer = (state = {}, action) => {
 const checkoutReducer = (state = {}, action) => {
   switch (action.type) {
     case 'CREATE_CHECKOUT':
-      return {};
+      return {...state, checkout: [...state.checkout, action.payload]};
     case 'GET_CHECKOUT':
-      return action.id;
-    case 'GET_CHECKOUT_ID':
-      return {};
-    case 'ADD_ITEM_TO_CHECKOUT':
-      return action.id;
-    case 'UPDATE_ITEM_IN_CHECKOUT':
-      return action.id;
-    case 'REMOVE_ITEM_FROM_CHECKOUT':
-      return action.id;
+      return {...state, checkout: [...state.checkout, action.payload]};
     default:
       return state;
   }
@@ -44,7 +36,7 @@ const checkoutReducer = (state = {}, action) => {
 
 export default combineReducers({
   routing: routerReducer,
-  product: productReducer,
-  collection: collectionReducer,
+  products: productReducer,
+  collections: collectionReducer,
   checkout: checkoutReducer
 })
