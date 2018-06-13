@@ -1,9 +1,3 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// ReactDOM.render(<App />, document.getElementById('root'));
-
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -13,7 +7,9 @@ import App from './containers/app'
 
 import './index.css'
 
-const target = document.querySelector('#root')
+const target = document.querySelector('#root');
+
+window.store = store;
 
 render(
   <Provider store={store}>
