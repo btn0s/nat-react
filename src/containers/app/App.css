@@ -104,7 +104,8 @@ sub {
 }
 
 .Hero {
-  min-height: 75vh;
+  min-height: 500px;
+  height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;

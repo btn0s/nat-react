@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
-import Product from '../product'
+import { Row, Col } from 'reactstrap';
+import ProductListItem from '../productListItem'
 
 class ProductList extends Component {
 
@@ -11,15 +11,15 @@ class ProductList extends Component {
   renderProducts() {
     if (!this.props.products) {
       return (
-        <Col span={24}>
+        <Col md="12">
           No Products
         </Col>
       )
     } else {
       return this.props.products.map( prod => {
         return (
-          <Col span={6} key={prod.id.toString()}>
-            <Product product={prod} />
+          <Col xs="12" md="6" lg="3" key={prod.id.toString()}>
+            <ProductListItem product={prod} />
           </Col>
         )
       })
@@ -28,7 +28,7 @@ class ProductList extends Component {
 
   render() {
     return (
-      <Row type="flex">
+      <Row>
         { this.renderProducts() }
       </Row>
     )

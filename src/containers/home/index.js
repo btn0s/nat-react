@@ -2,6 +2,7 @@ import React from 'react'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { Container } from 'reactstrap'
 import ProductList from '../../components/productList';
 
 class Home extends React.Component {
@@ -17,7 +18,9 @@ class Home extends React.Component {
         </section>
 
         <section className={'Home__Content'}>
-          <ProductList products={this.props.products.all}/>
+          <Container>
+            <ProductList products={this.props.products.all}/>
+          </Container>
         </section>
 
       </div>

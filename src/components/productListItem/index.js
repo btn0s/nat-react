@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-class Product extends Component {
+class ProductListItem extends Component {
   render() {
     return (
       <div className={'Product'} style={{padding: 20}}>
@@ -8,7 +9,9 @@ class Product extends Component {
           <img style={{ 'width': '100%' }} src={this.props.product.images[0].src} alt={`${this.props.product.title}`} />
         </div>
         <div className={'product__title'}>
-          {this.props.product.title}
+          <Link to={`/products/${(this.props.product.productType) ? this.props.product.productType : 'uncategorized'}/${this.props.product.handle}`}>
+            {this.props.product.title}
+          </Link>
         </div>
         <div className={'product__price'}>
           ${this.props.product.variants[0].price}
@@ -18,4 +21,4 @@ class Product extends Component {
   }
 }
 
-export default Product;
+export default ProductListItem;
