@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Link, withRouter } from 'react-router-dom'
 import { Home, Shop, Create, Live, About } from '../index'
 import Nav from '../../components/nav'
+import Checkout from '../../components/checkout'
 import { getAllProducts, getAllCollections, createCheckout, getCheckout } from '../../actions/app/index'
 import { connect }  from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -20,7 +21,11 @@ class App extends React.Component {
   
   render() {
     return (
-      <div className="App">
+      <div className={(this.props.checkout.isOpen) ? 'App no-scroll' : 'App'}>
+
+        <section className={'App__Search'}>
+        
+        </section>
 
         <section className={'App__Navigation'}>
           <Nav/>
@@ -37,7 +42,11 @@ class App extends React.Component {
         <section className={'App__Footer'}>
 
         </section>
-        
+
+        <section className={(this.props.checkout.isOpen) ? 'App__Checkout is-open' : 'App__Checkout'}>
+          <Checkout />
+        </section>
+
       </div>
     )
   }

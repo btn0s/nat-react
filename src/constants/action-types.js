@@ -1,7 +1,3 @@
-/*
- * action types
- */
-
 export const GET_ALL_PRODUCTS          = 'GET_ALL_PRODUCTS';
 export const GET_PRODUCT               = 'GET_PRODUCT';
 
@@ -14,3 +10,4 @@ export const GET_CHECKOUT_ID           = 'GET_CHECKOUT_ID';
 export const ADD_ITEM_TO_CHECKOUT      = 'ADD_ITEM_TO_CHECKOUT';
 export const UPDATE_ITEM_IN_CHECKOUT   = 'UPDATE_ITEM_IN_CHECKOUT';
 export const REMOVE_ITEM_FROM_CHECKOUT = 'REMOVE_ITEM_FROM_CHECKOUT';
+export const TOGGLE_CHECKOUT           = 'TOGGLE_CHECKOUT';

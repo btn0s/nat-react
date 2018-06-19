@@ -77,6 +77,12 @@ sub {
 
 .App {
   position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.App.no-scroll {
+  position: fixed;
 }
 
 .App > section {
@@ -90,7 +96,7 @@ sub {
   padding-top: 20px;
   padding-bottom: 20px;
   width: 100%;
-  z-index: 1001;
+  z-index: 10;
 }
 
 .Nav--Bg-White {
@@ -100,6 +106,7 @@ sub {
 
 .Nav__Logo {
   font-size: 2rem;
+  padding-top: 6px;
   font-family: 'Jua', sans-serif;
 }
 
@@ -113,4 +120,38 @@ sub {
 
 .Hero__Content {
   flex: auto;
+}
+
+.App__Checkout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 11;
+  transition: all 200ms ease;
+}
+
+.App__Checkout.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.Checkout {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  width: 600px;
+  z-index: 12;
+  background: #fff;
+}
+
+.App__Checkout.is-open > .Checkout {
+  transform: translateX(-600px);
+  transition-delay: 500ms;
+  transition: all 300ms ease;
 }

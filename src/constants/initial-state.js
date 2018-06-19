@@ -7,7 +7,10 @@ const initialState = {
     current: {},
     all: [],
   },
-  checkout: {},
+  checkout: {
+    isOpen: false,
+    data: []
+  },
   routing: {}
 }
 export default initialState;

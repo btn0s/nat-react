@@ -24,12 +24,14 @@ const collectionReducer = (state = initialState, action) => {
   }
 }
 
-const checkoutReducer = (state = {}, action) => {
+const checkoutReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'CREATE_CHECKOUT':
-      return {...state, ...action.payload};
+      return {...state, data: action.payload};
     case 'GET_CHECKOUT':
-      return {...state, ...action.payload};
+      return {...state, data: action.payload};
+    case 'TOGGLE_CHECKOUT':
+      return {...state, isOpen: action.payload};
     default:
       return state;
   }
