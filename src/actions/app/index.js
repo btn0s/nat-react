@@ -49,33 +49,33 @@ export function createCheckout() {
   }
 }
 
-export function getCheckout() {
+export function getCheckout(checkoutId) {
   return dispatch => {
-    client.checkout.fetch(this.getCheckoutID()).then(checkout => {
+    client.checkout.fetch(checkoutId).then(checkout => {
       return dispatch({ type: GET_CHECKOUT, payload: checkout })
     });
   }
 }
 
-export function addItemToCheckout(lineItemsToAdd) {
+export function addItemToCheckout(checkoutId, lineItemsToAdd) {
   return dispatch => {
-    client.checkout.addLineItems(this.getCheckoutID(), lineItemsToAdd).then(checkout => {
+    client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(checkout => {
       return dispatch({ type: GET_CHECKOUT, payload: checkout })
     });
   }
 }
 
-export function updateItemInCheckout(lineItemsToUpdate) {
+export function updateItemInCheckout(checkoutId, lineItemsToUpdate) {
   return dispatch => {
-    client.checkout.updateLineItems(this.getCheckoutID(), lineItemsToUpdate).then(checkout => {
+    client.checkout.updateLineItems(checkoutId, lineItemsToUpdate).then(checkout => {
       return dispatch({ type: GET_CHECKOUT, payload: checkout })
     });
   }
 }
 
-export function removeItemFromCheckout(lineItemIdsToRemove) {
+export function removeItemFromCheckout(checkoutId, lineItemIdsToRemove) {
   return dispatch => {
-    client.checkout.removeLineItems(this.getCheckoutID(), lineItemIdsToRemove).then(checkout => {
+    client.checkout.removeLineItems(checkoutId, lineItemIdsToRemove).then(checkout => {
       return dispatch({ type: GET_CHECKOUT, payload: checkout })    
     });
   }

@@ -7,7 +7,10 @@ import App from './containers/app'
 import { getAllProducts } from './actions/app/index'
 
 import './index.css'
+import 'boxicons/css/boxicons.min.css'
 
+const feather = require('feather-icons')
+feather.icons.x.toSvg();
 const target = document.querySelector('#root');
 
 window.store = store;

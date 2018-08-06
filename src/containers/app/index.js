@@ -6,6 +6,7 @@ import Checkout from '../../components/checkout'
 import { getAllProducts, getAllCollections, createCheckout, getCheckout } from '../../actions/app/index'
 import { connect }  from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Admin from '../admin'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -37,6 +38,7 @@ class App extends React.Component {
           <Route path={'/create'} component={Create} data={this.state}/>
           <Route path={'/live'} component={Live} data={this.state}/>
           <Route path={'/products/:category/:productHandle'} component={ProductPage} data={this.state}/>
+          <Route path={'/admin/'} component={Admin} />
         </section>
 
         <section className={'App__Footer'}>
